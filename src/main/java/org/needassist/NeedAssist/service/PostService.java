@@ -19,9 +19,7 @@ public class PostService {
         postRepository.save(post);
     }
 
-    public void getAllPosts() {
-        for(Post post: postRepository.findAll()){
-            System.out.println(post.getHeading());
-        }
+    public Iterable<Post> getAllPosts() {
+        return postRepository.findAll();
     }
 }
