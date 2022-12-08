@@ -21,4 +21,9 @@ public class HomeController {
         return "home";
     }
 
+    @GetMapping("/submit")
+    public String home() {
+        return "submit";
+    }
+
 }
