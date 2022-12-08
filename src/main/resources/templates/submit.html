@@ -15,9 +15,11 @@
 <div class="navigation"></div>
 <div class="container">
     <div class="submit-post-container">
-        <input type="text" placeholder="Title" class="post-title"/>
-        <textarea placeholder="Text" class="post-text"></textarea>
-        <button class="submit-post-button">Post</button>
+        <form action="#" th:action="@{/submit}" th:object="${post}" method="post">
+            <input type="text" placeholder="Title" th:field="*{heading}" class="post-title"/>
+            <textarea placeholder="Text" th:field="*{body}" class="post-text"></textarea>
+            <button class="submit-post-button" type="submit">Post</button>
+        </form>
     </div>
     <div class="sidebar-container">
         <h1>Posting to NeedAssist.</h1>

@@ -58,6 +58,10 @@ body {
     margin-bottom: 10px;
 }
 
+.submit-post-button:hover {
+    cursor: pointer;
+}
+
 .sidebar-container {
     padding: 16px;
     width: 320px;
