@@ -1,22 +1,34 @@
 package org.needassist.NeedAssist.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.Lob;
+import jakarta.persistence.*;
 
 import java.util.Date;
 
 @Entity
+@Table(name="posts")
 public class Post {
 
     @Id
     @GeneratedValue
     private int id;
+
     private String heading;
     private String body;
+    @Column(name="creation_date")
     Date creationDate;
+    @Column(name="last_updated")
     Date lastUpdated;
+
+    @Column(name="user_id")
+    private int userId;
+
+    public int getUserId() {
+        return userId;
+    }
+
+    public void setUserId(int userId) {
+        this.userId = userId;
+    }
 
     public int getId() {
         return id;

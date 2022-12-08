@@ -13,15 +13,10 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class HomeController {
     @Autowired
-    UserRepository userRepository;
-
-    @Autowired
     PostService postService;
 
     @GetMapping("/")
     public String home(Model model) {
-        userRepository.save(new User("user1", "password1", "user_role"));
-        userRepository.save(new User("user2", "password2", "admin_role"));
         model.addAttribute("allPosts", postService.getAllPosts());
         return "home";
     }

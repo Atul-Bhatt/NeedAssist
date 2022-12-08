@@ -20,6 +20,8 @@ public class SecurityConfig {
     @Bean
     SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         return http
+//                .authorizeHttpRequests(auth -> auth
+//                        .anyRequest().authenticated())
                 .userDetailsService(jpaUserDetailsService)
                 .headers(headers -> headers.frameOptions().sameOrigin())
                 .build();

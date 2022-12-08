@@ -5,13 +5,20 @@
 <head>
     <title>Need Assist</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@100;400&display=swap" rel="stylesheet">
     <link th:href="@{../css/style.css}" rel="stylesheet">
 </head>
 
 <body>
 <div class="navigation"></div>
 <div class="container">
-    <div class="feed__container">
+    <div class="feed-container">
+        <div class="feed-input">
+            <a><img alt="user avatar" height="38px" th:src="@{../images/avatar.png}"/></a>
+            <input type="text" placeholder="Create Post"/>
+        </div>
         <div th:each="post: ${allPosts}" class="post">
             <h1 th:text="${post.heading}"> </h1>
             <p th:text="${post.body}"> </p>
