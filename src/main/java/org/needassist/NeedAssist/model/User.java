@@ -9,7 +9,7 @@ import jakarta.persistence.Table;
 @Table(name="users")
 public class User {
     @Id @GeneratedValue
-    private Long id;
+    private int id;
     private String username;
     private String password;
     private String roles;
@@ -21,11 +21,11 @@ public class User {
         this.roles = roles;
     }
 
-    public Long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 

@@ -15,6 +15,8 @@ public class SecurityUser implements UserDetails {
         this.user = user;
     }
 
+    public int getUserId() { return user.getId(); }
+
     @Override
     public String getUsername() {
         return user.getUsername();
