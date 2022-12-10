@@ -21,6 +21,7 @@ public class HomeController {
 
     @GetMapping("/")
     public String home(Model model) {
+        Iterable<Post> allPosts = postService.getAllPosts();
         model.addAttribute("allPosts", postService.getAllPosts());
         return "home";
     }

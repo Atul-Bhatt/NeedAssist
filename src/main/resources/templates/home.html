@@ -15,6 +15,7 @@
 <body>
 <div class="navigation">
     <a href="/"><img alt="logo" height="42px" th:src="@{../images/NeedAssist.png}"/></a>
+    <a href="/myposts" class="my-posts">My Posts</a>
 </div>
 <div class="container">
     <div class="feed-container">
@@ -23,6 +24,7 @@
             <a style="width:100%" href="/submit"><input type="text" placeholder="Create Post" class="post-input"/></a>
         </div>
         <div th:each="post: ${allPosts}" class="post">
+            <span class="posted-by">Posted by <span class="username" th:text="'u/' + ${post.username}"></span></span>
             <h1 th:text="${post.heading}"> </h1>
             <p th:text="${post.body}"> </p>
         </div>

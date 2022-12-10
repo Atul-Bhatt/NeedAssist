@@ -10,6 +10,17 @@ body {
 
 .navigation {
     background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+}
+
+.my-posts {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 16px;
+    text-decoration: none;
+    color: #1a1a1b;
+    margin-right: 250px;
+    padding-top: 12px;
 }
 
 .container {
@@ -55,6 +66,16 @@ body {
 .post p {
     font-family: 'IBM Plex Sans', sans-serif;
     font-size: 14px;
+}
+
+.post span {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 12px;
+}
+
+.username:hover {
+    text-decoration: underline;
+    cursor: pointer;
 }
 
 .sidebar-container {

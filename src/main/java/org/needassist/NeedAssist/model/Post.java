@@ -12,6 +12,16 @@ public class Post {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private int id;
 
+    private String username;
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
     private String heading;
     private String body;
     @Column(name="creation_date")

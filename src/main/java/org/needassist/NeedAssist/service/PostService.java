@@ -29,7 +29,7 @@ public class PostService {
     }
 
     public Iterable<Post> getAllPosts() {
-        return postRepository.findAll();
+        return postRepository.findAllPostsWithUsername();
     }
 
     public Iterable<Post> getMyPosts() throws InvocationTargetException, IllegalAccessException, NoSuchMethodException {
