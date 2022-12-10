@@ -16,8 +16,8 @@
 <div class="container">
     <div class="submit-post-container">
         <form action="#" th:action="@{/submit}" th:object="${post}" method="post">
-            <input type="text" placeholder="Title" th:field="*{heading}" class="post-title"/>
-            <textarea placeholder="Text" th:field="*{body}" class="post-text"></textarea>
+            <input type="text" placeholder="Title" th:value="${post.heading}" th:field="*{heading}" class="post-title"/>
+            <textarea placeholder="Text" th:value="${post.body}" th:field="*{body}" class="post-text"></textarea>
             <button class="submit-post-button" type="submit">Post</button>
         </form>
     </div>

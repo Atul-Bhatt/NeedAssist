@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <title>Update NeedAssist</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@100;400&display=swap" rel="stylesheet">
+  <link th:href="@{../css/submit.css}" rel="stylesheet">
+</head>
+
+<body>
+<div class="navigation"></div>
+<div class="container">
+  <div class="submit-post-container">
+    <form action="#" th:action="@{'/update/' + ${postId}}" th:object="${post}" method="post">
+      <input type="text" placeholder="Title" th:value="${post.heading}" th:field="*{heading}" class="post-title"/>
+      <textarea placeholder="Text" th:value="${post.body}" th:field="*{body}" class="post-text"></textarea>
+      <button class="submit-post-button" type="submit">Post</button>
+    </form>
+  </div>
+  <div class="sidebar-container">
+    <h1>Posting to NeedAssist.</h1>
+  </div>
+</div>
+</body>
+</html>
