@@ -6,9 +6,7 @@ import org.needassist.NeedAssist.service.PostService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.lang.reflect.InvocationTargetException;
 
@@ -43,6 +41,12 @@ public class HomeController {
     public String myposts(Model model) throws InvocationTargetException, IllegalAccessException, NoSuchMethodException {
         model.addAttribute("myPosts", postService.getMyPosts());
         return "myposts";
+    }
+
+    @GetMapping("/delete/{postId}")
+    public String deletePost(@PathVariable("postId") int postId) {
+        postRepository.deleteById(postId);
+        return "home";
     }
 
 }
