@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class PostService {
@@ -31,5 +32,9 @@ public class PostService {
 
     public Iterable<Post> getAllPosts() {
         return postRepository.findAll();
+    }
+
+    public Iterable<Post> getMyPosts() throws InvocationTargetException, IllegalAccessException, NoSuchMethodException {
+        return postRepository.findAllByUserId(getUserIdFromContext());
     }
 }

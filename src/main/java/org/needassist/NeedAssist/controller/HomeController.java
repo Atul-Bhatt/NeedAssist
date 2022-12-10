@@ -39,7 +39,8 @@ public class HomeController {
     }
 
     @GetMapping("/myposts")
-    public String myposts() {
+    public String myposts(Model model) throws InvocationTargetException, IllegalAccessException, NoSuchMethodException {
+        model.addAttribute("myPosts", postService.getMyPosts());
         return "myposts";
     }
 

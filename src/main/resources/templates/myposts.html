@@ -1,10 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>NeedAssist - My Posts</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@100;400&display=swap" rel="stylesheet">
+    <link th:href="@{../css/style.css}" rel="stylesheet">
 </head>
 <body>
-<h1>Welcome to my posts.</h1>
+<div class="navigation"></div>
+<div class="container">
+    <div class="feed-container">
+        <div class="feed-input">
+            <a><img alt="user avatar" height="38px" th:src="@{../images/avatar.png}"/></a>
+            <a style="width:100%" href="/submit"><input type="text" placeholder="Create Post" class="post-input"/></a>
+        </div>
+        <div th:each="post: ${myPosts}" class="post">
+            <h1 th:text="${post.heading}"> </h1>
+            <p th:text="${post.body}"> </p>
+        </div>
+    </div>
+    <div class="sidebar-container">
+        <h1>Recent Posts.</h1>
+    </div>
+</div>
 </body>
 </html>
