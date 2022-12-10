@@ -19,8 +19,8 @@
             <h1 th:text="${post.heading}"> </h1>
             <p th:text="${post.body}"> </p>
             <div class="edit-delete-buttons">
-                <button class="edit-post">Edit Post</button>
-                <button class="delete-post">Delete Post</button>
+                <a ><button class="edit-post">Edit Post</button></a>
+                <a th:href="@{'/delete/' + ${post.id}}"><button class="delete-post">Delete Post</button></a>
             </div>
         </div>
     </div>
