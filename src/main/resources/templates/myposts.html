@@ -10,13 +10,11 @@
     <link th:href="@{../css/style.css}" rel="stylesheet">
 </head>
 <body>
-<div class="navigation"></div>
+<div class="navigation">
+    <a href="/"><img alt="logo" height="42px" th:src="@{../images/NeedAssist.png}"/></a>
+</div>
 <div class="container">
     <div class="feed-container">
-        <div class="feed-input">
-            <a><img alt="user avatar" height="38px" th:src="@{../images/avatar.png}"/></a>
-            <a style="width:100%" href="/submit"><input type="text" placeholder="Create Post" class="post-input"/></a>
-        </div>
         <div th:each="post: ${myPosts}" class="post">
             <h1 th:text="${post.heading}"> </h1>
             <p th:text="${post.body}"> </p>
