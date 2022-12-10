@@ -38,4 +38,9 @@ public class HomeController {
         postRepository.save(post);
     }
 
+    @GetMapping("/myposts")
+    public String myposts() {
+        return "myposts";
+    }
+
 }
