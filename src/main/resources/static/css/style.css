@@ -103,6 +103,7 @@ body {
 .sidebar-container {
     padding: 16px;
     width: 320px;
+    max-height: 60vh;
     background-color: #fff;
     margin-left: 24px;
 }

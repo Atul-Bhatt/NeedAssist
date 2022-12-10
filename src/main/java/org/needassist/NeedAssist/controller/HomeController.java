@@ -4,6 +4,7 @@ import org.needassist.NeedAssist.model.Post;
 import org.needassist.NeedAssist.repository.PostRepository;
 import org.needassist.NeedAssist.service.PostService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -19,7 +20,6 @@ public class HomeController {
 
     @GetMapping("/")
     public String home(Model model) {
-        Iterable<Post> allPosts = postService.getAllPosts();
         model.addAttribute("allPosts", postService.getAllPosts());
         return "home";
     }
@@ -45,7 +45,11 @@ public class HomeController {
 
     @GetMapping("/delete/{postId}")
     public String deletePost(@PathVariable("postId") int postId) {
-        postRepository.deleteById(postId);
+        try {
+            postRepository.deleteById(postId);
+        } catch(EmptyResultDataAccessException e) {
+            System.out.println("Post Id does not exist!");
+        }
         return "home";
     }
 
