@@ -1,7 +1,9 @@
 package org.needassist.NeedAssist.controller;
 
 import org.needassist.NeedAssist.model.Post;
+import org.needassist.NeedAssist.model.User;
 import org.needassist.NeedAssist.repository.PostRepository;
+import org.needassist.NeedAssist.repository.UserRepository;
 import org.needassist.NeedAssist.service.PostService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
@@ -19,6 +21,8 @@ public class HomeController {
     PostService postService;
     @Autowired
     PostRepository postRepository;
+    @Autowired
+    UserRepository userRepository;
 
     @GetMapping("/")
     public String home(Model model) throws InvocationTargetException, IllegalAccessException, NoSuchMethodException {
@@ -70,6 +74,18 @@ public class HomeController {
         model.addAttribute("post", post.orElse(new Post()));
         model.addAttribute("postId", postId);
         return "update";
+    }
+
+    @GetMapping("/register")
+    public String register(Model model) {
+        model.addAttribute("userData", new User());
+        return "register";
+    }
+
+    @PostMapping("/register")
+    public ModelAndView postRegister(@ModelAttribute User user) {
+        userRepository.save(user);
+        return new ModelAndView("redirect:/login");
     }
 
 }

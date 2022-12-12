@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>NeedAssist Register</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@100;400&display=swap" rel="stylesheet">
+    <link th:href="@{../css/register.css}" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <img alt="register side art" class="register-side-art" th:src="@{../images/registerSideArt.png}"/>
+    <div class="register-form-container">
+        <h1>Sign Up</h1>
+        <p>By continuing, you are setting up a NeedAssist Account. We don't have any User Agreement or Privacy Policy.</p>
+        <form>
+            <input class="user-pass-input" placeholder="Username"/>
+            <input class="user-pass-input" placeholder="Password"/>
+            <button type="submit" class="continue-button"> Continue </button>
+        </form>
+        <div class="bottom-login">
+            "Already a needassistor?"
+            <a href="/login">Login</a>
+        </div>
+    </div>
+</div>
+</body>
+</html>
