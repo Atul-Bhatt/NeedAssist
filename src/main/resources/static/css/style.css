@@ -11,7 +11,7 @@ body {
 .navigation {
     background-color: #fff;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 .my-posts {
@@ -20,6 +20,15 @@ body {
     text-decoration: none;
     color: #1a1a1b;
     margin-right: 250px;
+    padding-top: 12px;
+}
+
+.user-profile {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 16px;
+    text-decoration: none;
+    color: #1a1a1b;
+    margin-right: 16px;
     padding-top: 12px;
 }
 
