@@ -16,10 +16,10 @@ public class PostService {
     PostRepository postRepository;
     Post post = new Post();
 
-    public int getUserIdFromContext() throws InvocationTargetException, IllegalAccessException, NoSuchMethodException {
+    public String getUserInfoFromContext(String fieldName) throws InvocationTargetException, IllegalAccessException, NoSuchMethodException {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-        Method method = auth.getPrincipal().getClass().getMethod("getUserId", null);
-        return (int) method.invoke(auth.getPrincipal(),null);
+        Method method = auth.getPrincipal().getClass().getMethod(fieldName, null);
+        return String.valueOf(method.invoke(auth.getPrincipal(),null));
     }
 
     public void createNewPost() {
@@ -33,6 +33,6 @@ public class PostService {
     }
 
     public Iterable<Post> getMyPosts() throws InvocationTargetException, IllegalAccessException, NoSuchMethodException {
-        return postRepository.findAllByUserId(getUserIdFromContext());
+        return postRepository.findAllByUserId(Integer.parseInt(getUserInfoFromContext("getUserId")));
     }
 }

@@ -21,7 +21,8 @@ public class HomeController {
     PostRepository postRepository;
 
     @GetMapping("/")
-    public String home(Model model) {
+    public String home(Model model) throws InvocationTargetException, IllegalAccessException, NoSuchMethodException {
+        model.addAttribute("username", postService.getUserInfoFromContext("getUsername"));
         model.addAttribute("allPosts", postService.getAllPosts());
         return "home";
     }
@@ -34,14 +35,14 @@ public class HomeController {
 
     @PostMapping("/submit")
     public ModelAndView postSubmit(@ModelAttribute Post post) throws InvocationTargetException, IllegalAccessException, NoSuchMethodException {
-        post.setUserId(postService.getUserIdFromContext());
+        post.setUserId(Integer.parseInt(postService.getUserInfoFromContext("getUserId")));
         postRepository.save(post);
         return new ModelAndView("redirect:/");
     }
 
     @PostMapping("/update/{postId}")
     public ModelAndView postUpdate(@ModelAttribute Post post, @PathVariable("postId") int postId) throws InvocationTargetException, IllegalAccessException, NoSuchMethodException {
-        post.setUserId(postService.getUserIdFromContext());
+        post.setUserId(Integer.parseInt(postService.getUserInfoFromContext("getUserId")));
         post.setId(postId);
         postRepository.save(post);
         return new ModelAndView("redirect:/");
