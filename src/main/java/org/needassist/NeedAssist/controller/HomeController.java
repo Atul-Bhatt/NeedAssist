@@ -84,6 +84,10 @@ public class HomeController {
 
     @PostMapping("/register")
     public ModelAndView postRegister(@ModelAttribute User user) {
+        if(!userRepository.userAlreadyExists(user.getUsername()).isEmpty()) {
+            return new ModelAndView("redirect:/register");
+        }
+        user.setRoles("user_role");
         userRepository.save(user);
         return new ModelAndView("redirect:/login");
     }

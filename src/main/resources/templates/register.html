@@ -14,9 +14,9 @@
     <div class="register-form-container">
         <h1>Sign Up</h1>
         <p>By continuing, you are setting up a NeedAssist Account. We don't have any User Agreement or Privacy Policy.</p>
-        <form>
-            <input class="user-pass-input" placeholder="Username"/>
-            <input class="user-pass-input" placeholder="Password"/>
+        <form action="#" th:action="@{/register}" th:object="${userData}" method="post">
+            <input class="user-pass-input" placeholder="Username" th:field="*{username}"/>
+            <input class="user-pass-input" placeholder="Password" th:field="*{password}"/>
             <button type="submit" class="continue-button"> Continue </button>
         </form>
         <div class="bottom-login">
