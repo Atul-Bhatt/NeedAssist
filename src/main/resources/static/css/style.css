@@ -70,16 +70,19 @@ body {
 .post h1 {
     font-family: 'IBM Plex Sans', sans-serif;
     font-size: 1.17em;
+    color: black;
 }
 
 .post p {
     font-family: 'IBM Plex Sans', sans-serif;
     font-size: 14px;
+    color: black;
 }
 
 .post span {
     font-family: 'IBM Plex Sans', sans-serif;
     font-size: 12px;
+    color: black;
 }
 
 .edit-delete-buttons {
