@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@100;400&display=swap" rel="stylesheet">
-    <link th:href="@{../css/style.css}" rel="stylesheet">
+    <link th:href="@{../css/post.css}" rel="stylesheet">
 </head>
 <body>
 <div class="navigation">
@@ -18,7 +18,7 @@
 <div class="container">
     <div class="post-comment-container">
         <div class="post-container">
-            <span class="posted-by">Posted by <span class="username" th:text="'u/' + ${post.username}"></span></span>
+<!--            <span class="posted-by">Posted by <span class="username" th:text="'u/' + ${username}"></span></span>-->
             <h1 th:text="${post.heading}"> </h1>
             <p th:text="${post.body}"> </p>
         </div>

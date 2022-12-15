@@ -95,8 +95,8 @@ public class HomeController {
     @GetMapping("/post/{postId}")
     public String showPost(Model model, @PathVariable("postId") int postId) throws InvocationTargetException, IllegalAccessException, NoSuchMethodException {
         Optional<Post> post = postRepository.findById(postId);
+//        model.addAttribute("username", postRepository.findUsernameByPostId(postId).getUsername());
         model.addAttribute("post", post.orElse(new Post()));
-        model.addAttribute("username", postService.getUserInfoFromContext("getUsername"));
         return "post";
     }
 

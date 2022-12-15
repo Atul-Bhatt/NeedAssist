@@ -14,6 +14,24 @@ body {
     justify-content: space-around;
 }
 
+.my-posts {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 16px;
+    text-decoration: none;
+    color: #1a1a1b;
+    margin-right: 250px;
+    padding-top: 12px;
+}
+
+.user-profile {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 16px;
+    text-decoration: none;
+    color: #1a1a1b;
+    margin-right: 16px;
+    padding-top: 12px;
+}
+
 .container {
     padding: 20px 24px;
     display: flex;
@@ -27,4 +45,34 @@ body {
     padding: 16px;
     border-radius: 8px;
     background-color: #fff;
+}
+
+.post-container h1 {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 1.17em;
+    color: black;
+}
+
+.post-container p {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 14px;
+    color: black;
+}
+
+.post-container span {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 12px;
+    color: black;
+}
+
+.sidebar-container {
+    padding: 16px;
+    width: 320px;
+    max-height: 60vh;
+    background-color: #fff;
+    margin-left: 24px;
+}
+
+.sidebar-container h1 {
+    font-family: 'IBM Plex Sans', sans-serif;
 }
