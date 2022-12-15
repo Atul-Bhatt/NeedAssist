@@ -92,4 +92,12 @@ public class HomeController {
         return new ModelAndView("redirect:/login");
     }
 
+    @GetMapping("/post/{postId}")
+    public String showPost(Model model, @PathVariable("postId") int postId) throws InvocationTargetException, IllegalAccessException, NoSuchMethodException {
+        Optional<Post> post = postRepository.findById(postId);
+        model.addAttribute("post", post.orElse(new Post()));
+        model.addAttribute("username", postService.getUserInfoFromContext("getUsername"));
+        return "post";
+    }
+
 }

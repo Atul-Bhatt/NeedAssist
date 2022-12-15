@@ -25,7 +25,7 @@
             <a style="width:100%" href="/submit"><input type="text" placeholder="Create Post" class="post-input"/></a>
         </div>
         <div th:each="post: ${allPosts}" class="post">
-            <a style="text-decoration: none;" th:href="'/' + ${post.id}">
+            <a style="text-decoration: none;" th:href="'/post/' + ${post.id}">
                 <span class="posted-by">Posted by <span class="username" th:text="'u/' + ${post.username}"></span></span>
                 <h1 th:text="${post.heading}"> </h1>
                 <p th:text="${post.body}"> </p>
@@ -33,7 +33,7 @@
         </div>
     </div>
     <div class="sidebar-container">
-        <h1>Recent Posts.</h1>
+        <h1>Recent Posts</h1>
     </div>
 </div>
 
