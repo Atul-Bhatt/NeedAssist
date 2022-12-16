@@ -19,14 +19,17 @@
     <div class="post-comment-container">
         <div class="post-container">
 <!--            <span class="posted-by">Posted by <span class="username" th:text="'u/' + ${username}"></span></span>-->
-            <h1 th:text="${post.heading}"> </h1>
-            <p th:text="${post.body}"> </p>
-            <form action="#" th:action="@{'/comment/' + ${post.id}}" th:object="${comment}" method="post">
+            <h1 class="post-heading" th:text="${post.heading}"> </h1>
+            <p class="post-body" th:text="${post.body}"> </p>
+            <form class="comment-form" action="#" th:action="@{'/comment/' + ${post.id}}" th:object="${comment}" method="post">
                 <textarea placeholder="What are your thoughts?" class="comment-input" th:field="*{text}"></textarea>
                 <button class="submit-comment-button" type="submit">Comment</button>
             </form>
-            <div th:each="comment: ${allComments}" class="comment">
-                <p th:text="${comment.text}"></p>
+            <div class="comment-list">
+                <div th:each="comment: ${allComments}" class="comment">
+                    <p class="comment-username"> username </p>
+                    <p class="comment-text" th:text="${comment.text}"></p>
+                </div>
             </div>
         </div>
     </div>

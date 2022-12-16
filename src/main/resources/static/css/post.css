@@ -51,21 +51,15 @@ body {
     padding: 16px;
 }
 
-.post-container h1 {
+.post-heading {
     font-family: 'IBM Plex Sans', sans-serif;
     font-size: 1.17em;
     color: black;
 }
 
-.post-container p {
+.post-body {
     font-family: 'IBM Plex Sans', sans-serif;
     font-size: 14px;
-    color: black;
-}
-
-.post-container span {
-    font-family: 'IBM Plex Sans', sans-serif;
-    font-size: 12px;
     color: black;
 }
 
@@ -92,8 +86,35 @@ body {
     line-height: 16px;
 }
 
+.comment-form {
+    border-bottom: solid 1px #edeff1;
+    padding-bottom: 32px;
+}
+
 .submit-comment-button:hover {
     cursor: pointer;
+}
+
+.comment-list {
+    margin-top: 20px;
+}
+
+.comment {
+    margin-bottom: 14px;
+}
+
+.comment-text {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 14px;
+}
+
+.comment-username {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 12px;
+}
+
+.comment-username:hover {
+    text-decoration: underline;
 }
 
 .sidebar-container {
