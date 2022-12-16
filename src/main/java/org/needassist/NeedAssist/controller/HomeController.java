@@ -103,6 +103,7 @@ public class HomeController {
 //        model.addAttribute("username", postRepository.findUsernameByPostId(postId).getUsername());
         model.addAttribute("post", post.orElse(new Post()));
         model.addAttribute("comment", new Comment());
+        model.addAttribute("allComments", commentRepository.findAllByPostId(postId));
         return "post";
     }
 

@@ -1,6 +1,8 @@
 package org.needassist.NeedAssist.service;
 
+import org.needassist.NeedAssist.model.Comment;
 import org.needassist.NeedAssist.model.Post;
+import org.needassist.NeedAssist.repository.CommentRepository;
 import org.needassist.NeedAssist.repository.PostRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
@@ -35,4 +37,5 @@ public class PostService {
     public Iterable<Post> getMyPosts() throws InvocationTargetException, IllegalAccessException, NoSuchMethodException {
         return postRepository.findAllByUserId(Integer.parseInt(getUserInfoFromContext("getUserId")));
     }
+
 }
