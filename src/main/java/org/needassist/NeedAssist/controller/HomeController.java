@@ -1,7 +1,9 @@
 package org.needassist.NeedAssist.controller;
 
+import org.needassist.NeedAssist.model.Comment;
 import org.needassist.NeedAssist.model.Post;
 import org.needassist.NeedAssist.model.User;
+import org.needassist.NeedAssist.repository.CommentRepository;
 import org.needassist.NeedAssist.repository.PostRepository;
 import org.needassist.NeedAssist.repository.UserRepository;
 import org.needassist.NeedAssist.service.PostService;
@@ -23,6 +25,9 @@ public class HomeController {
     PostRepository postRepository;
     @Autowired
     UserRepository userRepository;
+
+    @Autowired
+    CommentRepository commentRepository;
 
     @GetMapping("/")
     public String home(Model model) throws InvocationTargetException, IllegalAccessException, NoSuchMethodException {
@@ -97,7 +102,16 @@ public class HomeController {
         Optional<Post> post = postRepository.findById(postId);
 //        model.addAttribute("username", postRepository.findUsernameByPostId(postId).getUsername());
         model.addAttribute("post", post.orElse(new Post()));
+        model.addAttribute("comment", new Comment());
         return "post";
+    }
+
+    @PostMapping("/comment/{postId}")
+    public ModelAndView submitComment(@ModelAttribute Comment comment, @PathVariable("postId") int postId) throws InvocationTargetException, IllegalAccessException, NoSuchMethodException {
+        comment.setUserId(Integer.parseInt(postService.getUserInfoFromContext("getUserId")));
+        comment.setPostId(postId);
+        commentRepository.save(comment);
+        return new ModelAndView("redirect:/post/" + comment.getPostId());
     }
 
 }

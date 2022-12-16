@@ -21,7 +21,7 @@
 <!--            <span class="posted-by">Posted by <span class="username" th:text="'u/' + ${username}"></span></span>-->
             <h1 th:text="${post.heading}"> </h1>
             <p th:text="${post.body}"> </p>
-            <form action="#" th:action="@{/comment}" th:object="${comment}" method="comment">
+            <form action="#" th:action="@{'/comment/' + ${post.id}}" th:object="${comment}" method="post">
                 <textarea placeholder="What are your thoughts?" class="comment-input" th:field="*{text}"></textarea>
                 <button class="submit-comment-button" type="submit">Comment</button>
             </form>

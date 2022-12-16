@@ -92,6 +92,10 @@ body {
     line-height: 16px;
 }
 
+.submit-comment-button:hover {
+    cursor: pointer;
+}
+
 .sidebar-container {
     padding: 16px;
     width: 320px;

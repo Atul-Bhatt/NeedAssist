@@ -1,11 +1,9 @@
 package org.needassist.NeedAssist.model;
 
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import org.springframework.stereotype.Service;
+import jakarta.persistence.*;
 
-@Service
+@Entity
+@Table(name="comments")
 public class Comment {
 
     @Id
@@ -13,6 +11,28 @@ public class Comment {
     private int id;
 
     private String text;
+
+    @Column(name="user_id")
+    private int userId;
+
+    @Column(name="post_id")
+    private int postId;
+
+    public int getUserId() {
+        return userId;
+    }
+
+    public void setUserId(int userId) {
+        this.userId = userId;
+    }
+
+    public int getPostId() {
+        return postId;
+    }
+
+    public void setPostId(int postId) {
+        this.postId = postId;
+    }
 
     public int getId() {
         return id;
