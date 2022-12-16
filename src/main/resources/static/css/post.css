@@ -40,11 +40,15 @@ body {
     justify-content: center;
 }
 
+.post-comment-container {
+    background: #fff;
+    border-radius: 8px;
+    width:640px
+}
+
 .post-container {
     margin-bottom: 16px;
     padding: 16px;
-    border-radius: 8px;
-    background-color: #fff;
 }
 
 .post-container h1 {
@@ -63,6 +67,29 @@ body {
     font-family: 'IBM Plex Sans', sans-serif;
     font-size: 12px;
     color: black;
+}
+
+.comment-input {
+    width: 100%;
+    border-radius: 4px;
+    height: 75px;
+    margin-top: 20px;
+    padding: 10px;
+    border: solid 1px #edeff1;
+}
+
+.submit-comment-button {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 12px;
+    color: #fff;
+    border-radius: 20px;
+    background-color: #0079d3;
+    border: 0;
+    float: right;
+    min-width: 24px;
+    min-height: 24px;
+    padding: 4px 8px;
+    line-height: 16px;
 }
 
 .sidebar-container {
