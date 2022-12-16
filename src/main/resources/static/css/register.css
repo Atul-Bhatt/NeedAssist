@@ -53,3 +53,7 @@
     border: 0;
     border-radius: 4px;
 }
+
+.continue-button:hover {
+    cursor: pointer;
+}

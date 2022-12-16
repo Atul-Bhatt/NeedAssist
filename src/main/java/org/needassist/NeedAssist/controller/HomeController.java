@@ -81,6 +81,12 @@ public class HomeController {
         return "update";
     }
 
+    /* Redirect Signup url to register*/
+    @GetMapping("/signup")
+    public ModelAndView signup() {
+        return new ModelAndView("redirect:/register");
+    }
+
     @GetMapping("/register")
     public String register(Model model) {
         model.addAttribute("userData", new User());
